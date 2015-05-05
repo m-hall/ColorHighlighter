@@ -473,8 +473,6 @@ def isInColor(view, sel, col_vars, array_format, line=None):
         if b < s or b > e:
             continue
         for k in regex_order:
-            if not array_format and k.endswith("array"):
-                continue
             word = sublime.Region(s, e)
             col = view.substr(word)
             if k[0] == "#" and (view.substr(word.begin() - 1) not in bound_symbols or view.substr(word.end()) not in bound_symbols):
